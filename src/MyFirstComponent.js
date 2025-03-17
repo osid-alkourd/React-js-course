@@ -1,10 +1,14 @@
+ import "./MyFirstStyling.css";
 
 const number = 10;
 const styleProperty = {backgroundColor: "red" , fontSize: "25px"};
+const person = {name: "Osid" , age: 24};
 function MyFirstComponent(){
     return(
         <div>
         <h1 style={styleProperty}>{number + " "}this is my first component</h1>
+        <h1 className={"greenBg"}>this is the second statement</h1>
+        <h1 className={person.name === "Osid" ? "blueBg" : "redBg"}> name details</h1>
         <button onClick={sayHello}>Button </button>
         </div>
     )
