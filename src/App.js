@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-
+import MyFirstComponent from './MyFirstComponent';
 function App() {
   return (
     <div className="App">
@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <MyName/>
+        <MyFirstComponent/>
       </header>
      
     </div>
@@ -25,10 +25,6 @@ function App() {
   );
 }
 
-function MyName(){
-  return(
-    <h1>my name is Osid</h1>
-  );
-}
+
 
 export default App;
