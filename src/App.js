@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -17,8 +17,17 @@ function App() {
         >
           Learn React
         </a>
+        <MyName/>
       </header>
+     
     </div>
+    
+  );
+}
+
+function MyName(){
+  return(
+    <h1>my name is Osid</h1>
   );
 }
 

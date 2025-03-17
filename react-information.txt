@@ -1,0 +1,5 @@
+html code with js code inside the component is called JSX.
+ 
+app.js called root component in react.
+
+hot reload: add change to the app and display it without refresh the page.
