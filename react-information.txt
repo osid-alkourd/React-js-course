@@ -3,3 +3,11 @@ html code with js code inside the component is called JSX.
 app.js called root component in react.
 
 hot reload: add change to the app and display it without refresh the page.
+
+component will be inside specific file, this file must represent the component.
+
+the file name recommend to be the same component function.
+
+self closing element: write html element, where this element can be closed with the same tag.
+
+ternary operator: write the condition statement in a concise way.
