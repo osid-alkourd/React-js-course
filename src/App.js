@@ -3,6 +3,9 @@ import "./App.css";
 // import MyFirstComponent from './MyFirstComponent';
 import Artical from "./Artical";
 function App() {
+  const thirdName = "Ali";
+  const thirdEmail = "ali@gmail.com";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,10 +21,15 @@ function App() {
         >
           Learn React
         </a>
-        <Artical name="Osid" email="osid@gmail.com" />
-        <Artical name="Ayman" email="ayman@gmail.com"/>
-        <Artical name="Ali" email="ali@gmail.com"/>
-
+        <Artical name="Osid" email="osid@gmail.com">
+          <h1>The Birthday is 2001</h1>
+        </Artical>
+        <Artical name="Ayman" email="ayman@gmail.com">
+          <h1>The Birthday is 1990</h1>
+        </Artical>
+        <Artical name={thirdName} email={thirdEmail}>
+        <h1>The Birthday is 1997</h1>
+        </Artical>
       </header>
     </div>
   );

@@ -1,10 +1,10 @@
-function Artical({name,email}){
+function Artical({name,email,children}){
     return(
         <div style={{ display: "flex" , justifyContent: "center" , margin:"1%" ,  width:"80%" }}>
         <div style={{ backgroundColor: "green" , color: "white" , width:'100%'}}>
             <h1>the name  is {name}</h1>
             <h1 style={{wordWrap:'break-word'}}>the emil  is {email}ppppppppppppppppppppppppppppppppppppppppppp</h1>
-            <h1>the date is 2001</h1>
+            {children}
         </div>
         </div>
     );
