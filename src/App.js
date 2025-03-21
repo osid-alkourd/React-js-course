@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import MyFirstComponent from './MyFirstComponent';
+// import MyFirstComponent from './MyFirstComponent';
+import Artical from "./Artical";
 function App() {
   return (
     <div className="App">
@@ -17,14 +18,13 @@ function App() {
         >
           Learn React
         </a>
-        <MyFirstComponent/>
+        <Artical name="Osid" email="osid@gmail.com" />
+        <Artical name="Ayman" email="ayman@gmail.com"/>
+        <Artical name="Ali" email="ali@gmail.com"/>
+
       </header>
-     
     </div>
-    
   );
 }
-
-
 
 export default App;
