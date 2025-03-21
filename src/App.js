@@ -16,8 +16,8 @@ function App() {
         >
           {/* Post Container */}
           <div style={{ width: "70%" }}>
-            <Post />
-            <Post />
+            <Post title="first post" description="this is the first post I puplish it" />
+            <Post title="second post" description="this is the second post I puplish it"  />
           </div>
           {/* End Post Container*/}
           {/* SideMenu */}

@@ -1,4 +1,4 @@
-function Post() {
+function Post({title,description}) {
   return (
     <div
       style={{
@@ -7,9 +7,9 @@ function Post() {
         margin: "25px", 
       }}
     >
-      <h2>this is the post title</h2>
+      <h2>{title}</h2>
       <hr />
-      <p>this is the post description</p>
+      <p>{description}</p>
     </div>
   );
 }

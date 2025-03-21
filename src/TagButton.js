@@ -1,6 +1,7 @@
 import  "./TagButtonStyle.css";
-function TagButton() {
-  return <button className="tagButton">Click</button>;
+function TagButton({children, title}) {
+  return <button className="tagButton"> {title} {children}</button>;
+  
 }
 
 export default TagButton;

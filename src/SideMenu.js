@@ -1,14 +1,18 @@
 import TagButton from "./TagButton";
-function SideMenu(){
-    return(
-        <div style={{ margin:"25px" , border:"solid teal 2px" }}>
-            <TagButton/>
-            <TagButton/>
-            <TagButton/>
-            <TagButton/>
-            <TagButton/>
-        </div>
-    )
+function SideMenu() {
+  return (
+    <div style={{ margin: "25px", border: "solid teal 2px" }}>
+      <TagButton title="click1">
+        <div>first button</div>
+      </TagButton>
+      <TagButton title="click2">
+       <div>second button</div> 
+      </TagButton>
+      <TagButton title="click3">
+        <div>third button</div>
+      </TagButton>
+    </div>
+  );
 }
 
 export default SideMenu;
