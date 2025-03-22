@@ -6,6 +6,16 @@ import Post from "./Post";
 import SideMenu from "./SideMenu";
 
 const sideMenuStatus = true;
+const posts = [
+  {id : 1 ,title: 'title 1' , description: "this is the first description"} ,
+  {id : 2 ,title: 'title 2' , description: "this is the second description"},
+  {id : 3 ,title: 'title 3' , description: "this is the third description"}
+
+];
+
+const postsList = posts.map((post)=>{
+  return <Post key={post.id} title={post.title} description={post.description}/>
+});
 function App() {
   return (
     <div className="App">
@@ -16,14 +26,7 @@ function App() {
         <div style={{ display: "flex", width: "60%" }}>
           {/* Post Container */}
           <div style={{ width: "70%" }}>
-            <Post
-              title="first post"
-              description="this is the first post I puplish it"
-            />
-            <Post
-              title="second post"
-              description="this is the second post I puplish it"
-            />
+           {postsList}
           </div>
           {/* End Post Container*/}
           {/* SideMenu */}
