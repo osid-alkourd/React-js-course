@@ -8,7 +8,7 @@ function SideMenu() {
       <TagButton title="click2">
        <div>second button</div> 
       </TagButton>
-      <TagButton title="click3">
+      <TagButton title="">
         <div>third button</div>
       </TagButton>
     </div>
