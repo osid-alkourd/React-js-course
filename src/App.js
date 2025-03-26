@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 // import MyFirstComponent from './MyFirstComponent';
 import MyButton  from "./MyButton";
+import MyInput  from "./MyInput";
 function App() {
   
   return (
@@ -21,6 +22,7 @@ function App() {
         </a>
         
         <MyButton/>
+        <MyInput/>
 
       </header>
     </div>
