@@ -3,8 +3,17 @@ function MyForm() {
   // const [inputName , setInputName] = useState('');
   // const [inputEmail,setInputEmail] = useState('');
   // we will replace the previous code with the following
-  
-  const [formInputs, setFormInput] = useState({ name: "", email: "" , age:''});
+
+  const [formInputs, setFormInput] = useState({
+    name: "",
+    email: "",
+    age: "",
+    isStudent: false,
+  });
+  function handleCheckbox(event) {
+
+       setFormInput({...formInputs, isStudent: event.target.checked})
+  }
   return (
     <div style={{ marginTop: "30px" }}>
       <form
@@ -16,25 +25,27 @@ function MyForm() {
         <input
           value={formInputs.name}
           onChange={(e) => {
-            setFormInput({...formInputs, name: e.target.value }); 
+            setFormInput({ ...formInputs, name: e.target.value });
             // ...formInputs means create new object form the original object (formInputs)
-
           }}
         />
         <label>email</label>
         <input
           value={formInputs.email}
           onChange={(e) => {
-            setFormInput({...formInputs , email:e.target.value});
+            setFormInput({ ...formInputs, email: e.target.value });
           }}
         />
-         <label>age</label>
+        <label>age</label>
         <input
           value={formInputs.age}
           onChange={(e) => {
-            setFormInput({...formInputs , age:e.target.value});
+            setFormInput({ ...formInputs, age: e.target.value });
           }}
         />
+        <br />
+        <label>is student</label>
+        <input type="checkbox" checked={formInputs.isStudent} onChange={handleCheckbox} />
         <button>submit</button>
       </form>
     </div>
