@@ -7,6 +7,7 @@ function MyInput() {
   }
   return (
     <div>
+        <hr></hr>
       <input onChange={changeCurrentName} value={myInputValue}/>
       <div>the current name is {myInputValue} </div>
     </div>
