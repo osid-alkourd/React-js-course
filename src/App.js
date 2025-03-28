@@ -1,32 +1,36 @@
-import logo from "./logo.svg";
+import { useState } from "react";
+// import logo from "./logo.svg";
 import "./App.css";
 // import MyFirstComponent from './MyFirstComponent';
-import MyButton  from "./MyButton";
-import MyInput  from "./MyInput";
-import MyForm from "./MyForm";
-function App() {
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-        <MyButton/>
-        <MyInput/>
-        <MyForm/>
 
-      </header>
+function App() {
+  const [fruits, setFruits] = useState(["apple", "banana", "orange", "peach"]);
+  const [fruiteInputValue, setFruiteInputValue] = useState("");
+  const fruitsList = fruits.map((ele, index) => {
+    return (
+      <li key={index} style={{ display: "inlineBlock" }}>
+        {ele}
+      </li>
+    );
+  });
+
+  function addFruite() {
+    // const newFruiteArray = [...fruits];
+    // newFruiteArray.push(fruiteInputValue);
+    // setFruits(newFruiteArray);
+    // setFruiteInputValue('');
+    // you can replace the previous code with the following
+    setFruits([...fruits,fruiteInputValue ]);
+    setFruiteInputValue('');
+  }
+  return (
+    <div style={{ margin: "40px" }}>
+      <ul>{fruitsList}</ul>
+      <input
+        value={fruiteInputValue}
+        onChange={(e) => setFruiteInputValue(e.target.value)}
+      />{" "}
+      <button onClick={addFruite}>add</button>
     </div>
   );
 }
