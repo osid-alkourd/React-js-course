@@ -10,9 +10,18 @@ function App() {
     return (
       <li key={index} style={{ display: "inlineBlock" }}>
         {ele}
+        {" "}<button  onClick={() => deleteItem(ele)}>delete</button> 
+
       </li>
     );
   });
+  function deleteItem(ele){
+    
+    const newArray = [...fruits];
+    const newArray2 = newArray.filter((item) => item !== ele);
+    setFruits(newArray2);
+
+  }
 
   function addFruite() {
     // const newFruiteArray = [...fruits];
