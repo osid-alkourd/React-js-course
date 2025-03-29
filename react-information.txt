@@ -11,3 +11,9 @@ the file name recommend to be the same component function.
 self closing element: write html element, where this element can be closed with the same tag.
 
 ternary operator: write the condition statement in a concise way.
+
+
+state management: 
+setCount(count + 1);
+setCount(count + 1);
+suppose the count = 0, if the setCount function is called two times the count value will stay 1 will not be 2 because setCount function work before when react change the state, therefore each time the setCount function called will read the count with its initial value that equal 0.
