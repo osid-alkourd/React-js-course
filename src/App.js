@@ -4,42 +4,25 @@ import "./App.css";
 // import MyFirstComponent from './MyFirstComponent';
 
 function App() {
-  const [fruits, setFruits] = useState(["apple", "banana", "orange", "peach"]);
-  const [fruiteInputValue, setFruiteInputValue] = useState("");
-  const fruitsList = fruits.map((ele, index) => {
-    return (
-      <li key={index} style={{ display: "inlineBlock" }}>
-        {ele}
-        {" "}<button  onClick={() => deleteItem(ele)}>delete</button> 
-
-      </li>
-    );
-  });
-  function deleteItem(ele){
-    
-    const newArray = [...fruits];
-    const newArray2 = newArray.filter((item) => item !== ele);
-    setFruits(newArray2);
-
-  }
-
-  function addFruite() {
-    // const newFruiteArray = [...fruits];
-    // newFruiteArray.push(fruiteInputValue);
-    // setFruits(newFruiteArray);
-    // setFruiteInputValue('');
-    // you can replace the previous code with the following
-    setFruits([...fruits,fruiteInputValue ]);
-    setFruiteInputValue('');
-  }
+  const [pending, setPending] = useState(0);
+  const [completing, setCompleting] = useState(0);
+  function buyProduct() {
+    setPending((p) => p + 1);
+    setTimeout(() => {
+      // setPending((latestPending) => {
+      //   console.log(latestPending);
+      //   setCompleting((c) => c + 1 );
+      //   return 0;
+      // });
+       setCompleting((c) => c + 1);
+       setPending((p) => p - 1);
+    }, 3000);
+  };
   return (
     <div style={{ margin: "40px" }}>
-      <ul>{fruitsList}</ul>
-      <input
-        value={fruiteInputValue}
-        onChange={(e) => setFruiteInputValue(e.target.value)}
-      />{" "}
-      <button onClick={addFruite}>add</button>
+      <h1>pending {pending}</h1>
+      <h1>waiting {completing}</h1>
+      <button onClick={buyProduct}>buy</button>
     </div>
   );
 }
