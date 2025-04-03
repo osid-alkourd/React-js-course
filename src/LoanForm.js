@@ -1,6 +1,7 @@
 import "./LoanFormStyle.css";
 import "./Modal";
 import Modal from "./Modal";
+import InputComponent from "./InputComponent";
 import { useState } from "react";
 function LoanForm() {
   const [loanInput, setLoanInput] = useState({
@@ -25,16 +26,28 @@ function LoanForm() {
   function handleSubmition(event) {
     event.preventDefault();
     event.stopPropagation(); // prevent the event from reaching the parent div
-    setErrorMessage(null)
+    setErrorMessage(null);
     console.log("submit");
-    if(loanInput.age < 18 || loanInput.age > 95 || isNaN(loanInput.age)){
-      setErrorMessage('the age is not avaliable');
+    if (loanInput.age < 18 || loanInput.age > 95 || isNaN(loanInput.age)) {
+      setErrorMessage("the age is not avaliable");
     }
     setShowModal(true);
   }
   function removeModalPopup() {
     console.log("div click");
-    setShowModal(false)
+    setShowModal(false);
+  }
+
+  function handleNameChange(name) {
+    setLoanInput({ ...loanInput, name: name });
+  }
+
+  function handlePhoneNumberChange(phoneNumber) {
+    setLoanInput({ ...loanInput, phoneNumber: phoneNumber });
+  }
+
+  function handleAgeChange(age) {
+    setLoanInput({ ...loanInput, age: age });
   }
   return (
     <div className="flex" onClick={removeModalPopup}>
@@ -42,28 +55,22 @@ function LoanForm() {
         <h1 style={{ display: "inline" }}>Requesting a lone</h1>
         <hr></hr>
 
-        <label>Name</label>
-        <input
+        <InputComponent
           value={loanInput.name}
-          onChange={(e) => {
-            setLoanInput({ ...loanInput, name: e.target.value });
-          }}
+          handleChange={handleNameChange}
+          labelName="Name"
         />
 
-        <label>Phone number</label>
-        <input
+        <InputComponent
+          handleChange={handlePhoneNumberChange}
           value={loanInput.phoneNumber}
-          onChange={(e) => {
-            setLoanInput({ ...loanInput, phoneNumber: e.target.value });
-          }}
+          labelName="Phone Number"
         />
 
-        <label>Age</label>
-        <input
-          value={loanInput.age}
-          onChange={(e) => {
-            setLoanInput({ ...loanInput, age: e.target.value });
-          }}
+        <InputComponent
+          handleChange={handleAgeChange}
+          value={loanInput.Age}
+          labelName="Age" 
         />
 
         <label>Are you an employee ??</label>
