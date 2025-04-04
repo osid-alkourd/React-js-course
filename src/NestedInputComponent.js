@@ -1,11 +1,14 @@
-export default function NestedInputComponent({...props}){
+import { useContext } from "react";
+import {LoanInputContext} from './contexts/LoanFormInputContext';
+export default function NestedInputComponent(){
+  const inputContext = useContext(LoanInputContext);
     return (
         <>
-          <label>{props.labelName}</label>
+          <label>{inputContext.labelName}</label>
           <input
-            value={props.value}
+            value={inputContext.value}
             onChange={(e) => {
-                props.handleChanging(e.target.value);
+              inputContext.handleChange(e.target.value);
             }}
           />
         </>

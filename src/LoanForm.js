@@ -2,7 +2,9 @@ import "./LoanFormStyle.css";
 import "./Modal";
 import Modal from "./Modal";
 import InputComponent from "./InputComponent";
+import { LoanInputContext } from "./contexts/LoanFormInputContext";
 import { useState } from "react";
+
 function LoanForm() {
   const [loanInput, setLoanInput] = useState({
     name: "",
@@ -54,24 +56,35 @@ function LoanForm() {
       <form className="flex" id="loan-form" style={{ flexDirection: "column" }}>
         <h1 style={{ display: "inline" }}>Requesting a lone</h1>
         <hr></hr>
+        <LoanInputContext.Provider
+          value={{
+            value: loanInput.name,
+            handleChange: handleNameChange,
+            labelName: "Name",
+          }}
+        >
+          <InputComponent />
+        </LoanInputContext.Provider>
 
-        <InputComponent
-          value={loanInput.name}
-          handleChange={handleNameChange}
-          labelName="Name"
-        />
+        <LoanInputContext.Provider
+          value={{
+            value: loanInput.phoneNumber,
+            handleChange: handlePhoneNumberChange,
+            labelName: "Phone Number",
+          }}
+        >
+          <InputComponent />
+        </LoanInputContext.Provider>
 
-        <InputComponent
-          handleChange={handlePhoneNumberChange}
-          value={loanInput.phoneNumber}
-          labelName="Phone Number"
-        />
-
-        <InputComponent
-          handleChange={handleAgeChange}
-          value={loanInput.Age}
-          labelName="Age" 
-        />
+        <LoanInputContext.Provider
+          value={{
+            value: loanInput.age,
+            handleChange: handleAgeChange,
+            labelName: "Age",
+          }}
+        >
+          <InputComponent />
+        </LoanInputContext.Provider>
 
         <label>Are you an employee ??</label>
         <input
